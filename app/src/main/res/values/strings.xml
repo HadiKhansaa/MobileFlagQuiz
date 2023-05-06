@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FlagQuiz</string>
+    <string name="question_1_of_10">Question 1 of 10</string>
+
+    <string-array name="choices">
+        <item>3 choices</item>
+        <item>6 choices</item>
+        <item>9 choices</item>
+    </string-array>
+</resources>

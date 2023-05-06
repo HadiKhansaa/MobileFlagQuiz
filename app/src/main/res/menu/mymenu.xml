@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item-->
+<!--        android:id="@+id/menuChoices3"-->
+<!--        app:showAsAction="never"-->
+<!--        android:title="3 optional Buttons"/>-->
+<!--    <item-->
+<!--        android:id="@+id/menuChoices6"-->
+<!--        app:showAsAction="never"-->
+<!--        android:title="6 optional Buttons"/>-->
+<!--    <item-->
+<!--        android:id="@+id/menuChoices9"-->
+<!--        app:showAsAction="never"-->
+<!--        android:title="9 optional Buttons"/>-->
+<!--    <item-->
+<!--        android:id="@+id/menuRestGame"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/ic_newGame"-->
+<!--        android:title="New Game"/>-->
+<!--    <item-->
+<!--        android:id="@+id/menuHelp"-->
+<!--        android:title="Help"/>-->
+
+</menu>
