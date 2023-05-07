@@ -30,15 +30,21 @@ public class SignUp extends AppCompatActivity {
 
         db = new MyDatabaseHelper(this);
 
-        intent = new Intent(this, FlagQuiz.class);
+        intent = new Intent(this, SetUp.class);
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(username.getText().toString().equals(username2.getText().toString()) && password.getText().toString().equals(password2.getText().toString())) {
-                    db.addUser(username.getText().toString(), password.getText().toString());
-                    Toast.makeText(SignUp.this, "Account registered successfully!", Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
+                    int id = db.addUser(username.getText().toString(), password.getText().toString());
+                    if(id!=-1) {
+                        MainActivity.ID = id;
+                        Toast.makeText(SignUp.this, "Account registered successfully!", Toast.LENGTH_SHORT).show();
+                        MainActivity.rating = db.getRating(id);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(SignUp.this, "Account Already Exists", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else
                     Toast.makeText(SignUp.this, "Please Enter proper username and password", Toast.LENGTH_SHORT).show();
@@ -48,7 +54,8 @@ public class SignUp extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
+
+                startActivity(new Intent(SignUp.this, MainActivity.class));
             }
         });
     }

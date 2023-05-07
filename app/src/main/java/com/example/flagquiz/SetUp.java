@@ -9,14 +9,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.IOException;
 
 public class SetUp extends AppCompatActivity {
 
     private Spinner choiceSpinner;
-    private Button button;
-    private Intent intent;
+    private Button button, profile;
+    private Intent intent, intent2;
     private int nbOfOptions = 0;
 
     public SetUp() {
@@ -30,6 +31,8 @@ public class SetUp extends AppCompatActivity {
 
         choiceSpinner = findViewById(R.id.choiceSpinner);
         button = findViewById(R.id.startQuiz);
+        profile = findViewById(R.id.profile);
+
         choiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -48,7 +51,14 @@ public class SetUp extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent2 = new Intent(SetUp.this, Profile.class);
+                startActivity(intent2);
             }
         });
 

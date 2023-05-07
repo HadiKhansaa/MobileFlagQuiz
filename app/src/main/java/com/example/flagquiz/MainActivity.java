@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Button signIn, signUp;
     MyDatabaseHelper myDb;
     Intent intent, intent2;
+    public static int ID=0;
+    public static String rating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +39,13 @@ public class MainActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean result = myDb.checkInfo(username.getText().toString(), password.getText().toString());
-                if(result) startActivity(intent2);
+                int id = myDb.checkInfo(username.getText().toString(), password.getText().toString());
+                if(id!=-1)
+                {
+                    ID = id;
+                    rating = myDb.getRating(id);
+                    startActivity(intent2);
+                }
                 else Toast.makeText(MainActivity.this, "Wrong Email or password", Toast.LENGTH_SHORT).show();
             }
         });

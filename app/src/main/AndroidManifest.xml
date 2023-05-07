@@ -13,6 +13,14 @@
         android:theme="@style/Theme.FlagQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:parentActivityName=".SetUp">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SetUp"
             android:exported="false">
             <meta-data

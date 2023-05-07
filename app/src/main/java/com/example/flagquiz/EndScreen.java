@@ -25,9 +25,19 @@ public class EndScreen extends AppCompatActivity {
 
     public void resetGame(View v)
     {
-        Intent i = new Intent(this, FlagQuiz.class);
-        i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
-        startActivity(i);
+        if(v.getId() == R.id.reset) {
+            Intent i = new Intent(this, FlagQuiz.class);
+            i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
+            startActivity(i);
+        }else if(v.getId() == R.id.profile){
+            Intent i = new Intent(this, Profile.class);
+            i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
+            startActivity(i);
+        }else{
+            Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
+            startActivity(i);
+        }
     }
 
 }

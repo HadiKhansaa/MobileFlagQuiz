@@ -17,18 +17,43 @@
         android:hint="your answer"
         android:textColor="#0000FF"
         android:textSize="30sp"
-        android:layout_weight="4">
+        android:layout_weight="15">
 
     </TextView>
 
     <Button
+        android:id="@+id/reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:backgroundTint="#0000FF"
+        android:layout_weight="1"
+        android:onClick="resetGame"
         android:text="RESET GAME"
-        android:onClick="resetGame"></Button>
+        app:icon="@android:drawable/ic_menu_revert"></Button>
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:onClick="resetGame"
+        android:text="VIEW PROFILE"
+        app:icon="@android:drawable/ic_menu_my_calendar"></Button>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:onClick="resetGame"
+        android:text="LOG OUT"
+        app:icon="@android:drawable/btn_dialog"></Button>
+
+
 
 </LinearLayout>

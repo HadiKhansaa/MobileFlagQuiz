@@ -81,20 +81,35 @@ public class FlagQuiz extends AppCompatActivity {
 
         buttonsLayout.removeAllViews();
         String correctImg = "";
+        int[] indexes = new int[9];
         int r = (int)(Math.random()*nbOfOptions);
         for(int i=0; i<nbOfOptions; i++)
         {
             int randomIndex = (int)(Math.random()*222);
+            for(int j=0; j< indexes.length; j++)
+            {
+                if(randomIndex == indexes[j]){
+                    randomIndex =  (int)(Math.random()*222);
+                    j=-1;
+                }
+            }
             int len = imgList[randomIndex].split("-")[1].length();
             String imgName = imgList[randomIndex].split("-")[1].substring(0, len-4);
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(1000, 130);
-            params.bottomMargin = 10;
-            params.topMargin = 10;
+            LinearLayout.LayoutParams params;
+            if(nbOfOptions == 9){
+                params = new LinearLayout.LayoutParams(1000, 110);
+                params.bottomMargin = 1;
+            }
+            else{
+                params = new LinearLayout.LayoutParams(1000, 130);
+                params.bottomMargin = 10;
+                params.topMargin = 10;
+            }
 
             Button button = new Button(this);
             button.setText(imgName);
             button.setId(i);
+
             button.setBackgroundColor(Color.rgb(230, 230, 250));
 
             button.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +162,8 @@ public class FlagQuiz extends AppCompatActivity {
         if(questionCounter == 10)
         {
             intent.putExtra("correctAnswers", correctAnswers);
+            MyDatabaseHelper db = new MyDatabaseHelper(this);
+            db.updateRating(correctAnswers*10);
             startActivity(intent);
         }
         else if(answered) {
