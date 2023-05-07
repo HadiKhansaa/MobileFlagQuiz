@@ -17,11 +17,16 @@
         android:hint="your answer"
         android:textColor="#0000FF"
         android:textSize="30sp"
+<<<<<<< HEAD
         android:layout_weight="15">
+=======
+        android:layout_weight="4">
+>>>>>>> e70ad82029647b2213f661efb7fc92881a8d8244
 
     </TextView>
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,5 +60,15 @@
         app:icon="@android:drawable/btn_dialog"></Button>
 
 
+=======
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:backgroundTint="#0000FF"
+        android:text="RESSET GAME"
+        android:onClick="resetGame"></Button>
+>>>>>>> e70ad82029647b2213f661efb7fc92881a8d8244
 
 </LinearLayout>

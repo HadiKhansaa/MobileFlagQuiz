@@ -25,6 +25,7 @@ public class EndScreen extends AppCompatActivity {
 
     public void resetGame(View v)
     {
+<<<<<<< HEAD
         if(v.getId() == R.id.reset) {
             Intent i = new Intent(this, FlagQuiz.class);
             i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
@@ -38,6 +39,10 @@ public class EndScreen extends AppCompatActivity {
             i.putExtra("nbOfChoices", FlagQuiz.nbOfOptions);
             startActivity(i);
         }
+=======
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+>>>>>>> e70ad82029647b2213f661efb7fc92881a8d8244
     }
 
 }
